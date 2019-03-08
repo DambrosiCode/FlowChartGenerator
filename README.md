@@ -4,11 +4,17 @@ Simple Python class for generating a flow chart line by line should the need ari
 Each function prints a symbol based on standard flow chart symbols. Arguments should include a text string and position integer that is based on the distance from the left of the terminal or last character (arrows require no text, diamonds require three strings to denote the choice and two options). 
 
 Current symbols and what they symbolize include 
+
 |box| : action being performed 
+
 optionA--<diamond>--optionB : choice and options
+
 (circle) : Start and Finish or flowchart
+
 right arrow : ----->
+
 left arrow : <-----
+
 down arrow : \|/
                     
                     
