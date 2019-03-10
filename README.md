@@ -25,3 +25,26 @@ Each line must be constructed individually so it's recommended to draw out how t
 3) Call a down arrow directly underneath ex: print(flow.down_arrow(40))
 4) For more than one symbol on the same line simply concatenate in the print() function ex: print(flow.box('this is on', 10) + flow.trap('the same line', 10))
 5) Continue this process until finished ex: print(flow.circle('FINISH', 40))
+
+Here is what the included Example.py output should generate:
+                                        (START)
+                                           \/
+                             BAM----<BAM or fastq>----fastq
+                              \/                         \/
+          Yes----<Is the bam Clean?>----No               \/
+           \/                           \/               \/
+      /clean bam/<-----\/              /bam/             \/
+           \/          \/               \/               \/
+      |Merge bam|      \/           |sam2fastq|          \/
+           \/          \/               \/               \/
+      /merged bam/     \/            /fastq/<------------\/
+           \/          \/               \/
+        (FINISH)       \/               \/
+                       \/             |trim|
+                       \/               \/
+                       \/         /clean fastq/
+                       \/               \/
+                       \/            |Merge|
+                       \/               \/
+                       \/         /merged fastq/
+                       \/<--------------\/
