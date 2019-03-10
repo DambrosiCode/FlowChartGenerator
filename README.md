@@ -15,7 +15,7 @@ right arrow : ----->
 
 left arrow : <-----
 
-down arrow : \|/
+down arrow : \/
                     
                     
 How To Construct a Flow Chart:
