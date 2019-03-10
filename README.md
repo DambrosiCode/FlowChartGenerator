@@ -27,6 +27,7 @@ Each line must be constructed individually so it's recommended to draw out how t
 5) Continue this process until finished ex: print(flow.circle('FINISH', 40))
 
 Here is what the included Example.py output should generate:
+<pre>
                                         (START)
                                            \/
                              BAM----<BAM or fastq>----fastq
@@ -48,3 +49,4 @@ Here is what the included Example.py output should generate:
                        \/               \/
                        \/         /merged fastq/
                        \/<--------------\/
+</pre?
