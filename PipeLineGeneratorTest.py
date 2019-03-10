@@ -1,114 +1,31 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Mar  1 14:13:30 2019
+Created on Sun Mar 10 12:44:51 2019
 
 @author: Matt
 """
-import shutil
 
+from SlthrChart import OutLiner
 
-class OutLiner(object):
-    def box(self,text, pos): 
-        '''
-        Outputs |box| for flowchart elements depictings a process
-        Arguments:
-            text(string): text
-            pos(int): position
-        Returns:
-            string: |text|
-        '''
-        
-        self.text = text            
-
-        space_len = (len(self.text) - len(self.text))
-        box = ('|' + self.text + ' '*space_len +'|')
-        
-        return(box[i].rjust(pos + int(len(box)/2)))
-        
-    def diamond(self,text, pos, optionA, optionB): 
-        '''
-        Outputs <diamond> and 2 options for flowchart elements depictings a conditional
-        Arguments:
-            text(string): text
-            pos(int): position
-        Returns:
-            string: optionA----<text>----optionB
-        '''
-        
-        self.text = text
-
-        self.optionA = optionA
-        self.optionB = optionB
-        
-        space_len = (len(self.text) - len(self.text))
-        trap = (self.optionA + '----' +'<' + self.text + ' '*space_len +'>' +'----' + self.optionB)
-        
-        return(trap.rjust(pos + int(len(trap)/2)))
-            
-    def trap(self,text,pos): 
-        '''
-        Outputs /trapezoid/ andfor flowchart elements depictings an input or output
-        Arguments:
-            text(string): text
-            pos(int): position
-        Returns:
-            string: /text/
-        '''
-        
-        self.text = text
-        space_len = (len(self.text) - len(self.text))
-        trap = ('/' + self.text + ' '*space_len +'/')
-        
-        
-        return(trap.rjust(pos+int(len(trap)/2)))
-        
-    def circle(self,text, pos):
-        '''
-        Outputs (circle) and for flowchart elements depictings start and finish 
-        Arguments:
-            text(string): text
-            pos(int): position
-        Returns:
-            string: (text)
-        '''
-        
-        self.text = text
-        circ = ('(' + self.text +')')
-            
-        return(circ.rjust(pos + int(len(circ)/2)))
-    
-    def down_arrow(self, pos):
-        '''
-        Outputs down arrow to signify next flow chart element
-        Arguments:
-            pos(int): position
-        Returns:
-            string: \/
-        '''
-        
-        #pos = int(len(text)/2)
-        return('\/'.rjust(pos))
-        
-    def left_arrow(self, length):
-        '''
-        Outputs down arrow to signify next flow chart element
-        Arguments:
-            length(int): how long the arrow should be
-        Returns:
-            string: <-|
-        '''
-        
-        left = ('<'+'-'*length + '|')
-        return(left)
-        
-    def right_arrow(self, length):
-        '''
-        Outputs down arrow to signify next flow chart element
-        Arguments:
-            length(int): how long the arrow should be
-        Returns:
-            string: |->
-        '''
-        
-        right = ('|' + '-'*length + '>')
-        return(right)
+o = OutLiner()
+print(o.circle('START', 44))
+print(o.down_arrow(44))
+print(o.diamond('BAM or fastq', 44, 'BAM','fastq'))
+print(o.down_arrow(31) + o.down_arrow(26))
+print(o.diamond('Is the bam Clean?', 26, 'Yes','No') + o.down_arrow(16))
+print(o.down_arrow(12) + o.down_arrow(28) + o.down_arrow(16))
+print(o.trap('clean bam', 12) + o.left_arrow(5) + o.trap('bam', 17) + o.down_arrow(14))
+print(o.down_arrow(12) + o.down_arrow(11) + o.down_arrow(16) + o.down_arrow(16))
+print(o.box('Merge bam', 12) + o.down_arrow(7) + o.box('sam2fastq', 17) + o.down_arrow(11))
+print(o.down_arrow(12) + o.down_arrow(11) + o.down_arrow(16) + o.down_arrow(16))
+print(o.trap('merged bam', 12) + o.down_arrow(6) + o.trap('fastq', 16) + o.left_arrow(12))
+print(o.down_arrow(12) + o.down_arrow(11) + o.down_arrow(16))
+print(o.circle('FINISH', 12), o.down_arrow(7) + o.down_arrow(16))
+print(o.down_arrow(24) + o.box('trim',16))
+print(o.down_arrow(24) + o.down_arrow(16))
+print(o.down_arrow(24) + o.trap('clean fastq',16))
+print(o.down_arrow(24) + o.down_arrow(16))
+print(o.down_arrow(24) + o.box('Merge',16))
+print(o.down_arrow(24) + o.down_arrow(16))
+print(o.down_arrow(24) + o.trap('merged fastq', 16))
+print(o.down_arrow(24) + o.left_arrow(14))
