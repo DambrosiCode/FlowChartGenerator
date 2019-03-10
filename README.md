@@ -30,7 +30,7 @@ Here is what the included Example.py output should generate:
 <pre>
                                         (START)
                                            \/
-                             BAM----/<BAM or fastq/>----fastq
+                             BAM------BAM or fastq-----fastq
                               \/                         \/
           Yes----<Is the bam Clean?>----No               \/
            \/                           \/               \/
