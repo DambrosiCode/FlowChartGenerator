@@ -11,9 +11,9 @@ optionA--<diamond>--optionB : choice and options
 
 (circle) : Start and Finish or flowchart
 
-right arrow : ----->
+right arrow : |----->
 
-left arrow : <-----
+left arrow : <-----|
 
 down arrow : \\/
                     
