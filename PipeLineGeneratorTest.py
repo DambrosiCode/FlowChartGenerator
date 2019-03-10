@@ -4,7 +4,6 @@ Created on Sun Mar 10 12:44:51 2019
 
 @author: Matt
 """
-
 from SlthrChart import OutLiner
 
 o = OutLiner()
